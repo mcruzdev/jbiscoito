@@ -6,6 +6,7 @@ import dev.matheuscruz.git.RepoURL;
 import io.quarkus.qute.Qute;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Parameters;
 
@@ -29,7 +30,9 @@ public class JBiscoitoCommand implements Runnable {
             description = "Repository URL")
     String repoURL;
 
-    Boolean override = Boolean.TRUE;
+    @CommandLine.Option(names = {"-f", "--overwrite-if-exists"}, defaultValue = "true",
+            description = "Overwrite the output directory if it already exists")
+    Boolean overwriteIfExists = Boolean.TRUE;
 
     private static final ObjectMapper jsonMapper = new ObjectMapper();
 
@@ -42,8 +45,15 @@ public class JBiscoitoCommand implements Runnable {
             String cloneDir = String.format("%s/%s", userDir, repoURL.repositoryName());
             Path cloneDirPath = Path.of(cloneDir);
 
-            if (override) {
-                deleteDir(cloneDirPath);
+            if (Files.exists(cloneDirPath)) {
+                if (overwriteIfExists) {
+                    deleteDir(cloneDirPath);
+                } else {
+                    LOGGER.error("Couldn't replace the {} folder. " +
+                                    "Please, turn on the --overwrite-if-exists option to true or delete the existing folder.",
+                            cloneDirPath.getFileName().toString());
+                    return;
+                }
             }
 
             String cloneCommand = new Git().cloneCommand(repoURL);
