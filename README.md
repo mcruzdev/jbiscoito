@@ -1,4 +1,4 @@
-# JBiscoito
+# JBiscoito :cookie:
 
 JBiscoito is a command-line interface (CLI) designed for effortlessly consuming and generating projects through scaffolding.
 
