@@ -2,7 +2,7 @@
 
 JBiscoito is a command-line interface (CLI) designed for effortlessly consuming and generating projects through scaffolding.
 
-JBiscoito uses Quarkus, Qute and Jackson for templating :cookie:
+JBiscoito uses Quarkus, Qute and Jackson for templating. It is inspered in [Cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.0/index.html) project.
 ## Getting Started
 
 ### Installing JBiscoito
