@@ -17,7 +17,7 @@ mv jbiscoito /usr/local/bin/jbiscoito
 JBiscoito utilizes the `jbiscoito.json` file as a data source for templating with Qute. Execute the following command to create the `jbiscoito.json` file. 
 
 ```shell
-echo '{"applicationName": "new-application", "team": { "name": "crudGroup", "area": "platform"}}' > jbiscoito.json
+echo '{"applicationName": "crud", "team": { "name": "crudGroup", "area": "platform"}}' > jbiscoito.json
 ```
 
 ### Running
