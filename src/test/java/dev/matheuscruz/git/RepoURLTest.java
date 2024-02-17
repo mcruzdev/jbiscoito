@@ -1,5 +1,6 @@
 package dev.matheuscruz.git;
 
+import dev.matheuscruz.RepoURL;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
