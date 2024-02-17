@@ -1,1 +1,8 @@
-{"name": "JBiscoito", "packageName": "jbiscoitopkdddg"}
+{
+  "name": "JBiscoito",
+  "packageName": "jbiscoitopkdddg",
+  "user": {
+    "name": "Matheus",
+    "surname": "Cruz"
+  }
+}
